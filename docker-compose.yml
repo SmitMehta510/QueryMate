@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  database:
+    build: db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  app:
+    build: app
+    depends_on:
+      - database
+    ports:
+      - "8501:8501"
+    environment:
+      SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://root:password@database:3306/solecraft?charset=utf8mb4'
