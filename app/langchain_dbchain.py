@@ -2,20 +2,16 @@ from langchain_community.utilities.sql_database import SQLDatabase
 from langchain_experimental.sql.base import SQLDatabaseChain
 from langchain_core.prompts import PromptTemplate
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores.chroma import Chroma
 from langchain_google_genai import GoogleGenerativeAI
 from langchain.prompts import SemanticSimilarityExampleSelector
 from langchain.prompts import FewShotPromptTemplate
 from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
 from langchain.prompts.prompt import PromptTemplate
 from few_shots import few_shots
-# import os
-# from dotenv import load_dotenv, dotenv_values
-
-# load_dotenv()
 
 def get_llm():
-    llm = GoogleGenerativeAI(model="gemini-pro",google_api_key="-----ENTER API KEY HERE------")
+    llm = GoogleGenerativeAI(model="gemini-pro",google_api_key="-----ENTER API KEY HERE-----")
     return llm
 
 
