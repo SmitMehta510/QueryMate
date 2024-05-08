@@ -14,6 +14,11 @@ The NLP2SQL project consists of several components:
   +  **Few-Shot Learning**: We incorporate few-shot learning techniques to enhance the system's ability to understand new types of queries by learning from a small number of examples.
 
 ## Getting Started
+Requirement: An API key for using Google GEMINI model. Head to [Makersuite](https://aistudio.google.com/app/apikey) for getting an API key.
+```python
+#Enter that API key as value
+llm = GoogleGenerativeAI(model="gemini-pro",google_api_key="-----ENTER API KEY HERE-----")
+```
 
 ### To get started with the QueryMate manually, follow these steps:
 
